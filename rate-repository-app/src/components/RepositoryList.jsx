@@ -1,9 +1,11 @@
 import { FlatList, View, StyleSheet } from 'react-native';
 import RepositoryItem from './RepositoryItem';
+import theme from '../theme';
 
 const styles = StyleSheet.create({
   separator: {
-    height: 10,
+    height: 5,
+    backgroundColor: theme.colors.textSecondary
   },
 });
 
@@ -33,7 +35,7 @@ const repositories = [
   {
     id: 'django.django',
     fullName: 'django/django',
-    description: 'The Web framework for perfectionists with deadlines.',
+    description: 'The Web framework for perfectionists with deadlines blah blah blah blah blah blah.',
     language: 'Python',
     forksCount: 21015,
     stargazersCount: 48496,
@@ -44,7 +46,7 @@ const repositories = [
   {
     id: 'reduxjs.redux',
     fullName: 'reduxjs/redux',
-    description: 'Predictable state container for JavaScript apps',
+    description: 'Predictable state container for JavaScript apps blah blah blah blah blah blah',
     language: 'TypeScript',
     forksCount: 13902,
     stargazersCount: 52869,

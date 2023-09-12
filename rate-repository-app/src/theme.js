@@ -1,4 +1,7 @@
 const theme = {
+  containerBody: {
+    padding: 20,
+  },
   colors: {
     textPrimary: '#24292e',
     textSecondary: '#586069',

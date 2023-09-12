@@ -4,7 +4,7 @@ import theme from "../theme";
 
 const styles = StyleSheet.create({
   container: {
-    marginVertical: 8,
+    marginVertical: 16,
   },
   avatar: {
     width: 50,
@@ -24,7 +24,8 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   childMargin: {
-    marginBottom: 8, // Add a margin of 5 units to the children
+    marginBottom: 8,
+    marginRight: 48, //weird text wrap issue on right side
   },
   textRow: {
     marginRight: 8,
@@ -41,10 +42,6 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.primary,
     padding: 5,
     borderRadius: 5,
-  },
-  horizontalLine: {
-    borderBottomColor: theme.colors.textSecondary, // Color of the line
-    borderBottomWidth: 4,       // Width of the line
   },
 });
 
@@ -91,7 +88,6 @@ const RepositoryItem = ({ item }) => {
         </View>
 
       </View>
-      <View style={styles.horizontalLine} />
     </>
   );
 }
