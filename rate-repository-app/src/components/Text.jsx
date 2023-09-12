@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
   colorPrimary: {
     color: theme.colors.primary,
   },
-  colorTextLight:{
+  colorTextLight: {
     color: theme.colors.textLight,
   },
   fontSizeSubheading: {
