@@ -1,4 +1,4 @@
-
+hours: 1+1+2 + 2 +1 = 7
 # Steps
 1. initialize w create-expo-app:
 `npx create-expo-app rate-repository-app --template expo-template-blank@sdk-46`
@@ -21,3 +21,8 @@ press w to launch in web browser
     "requireConfigFile": false
   },
 ```
+
+# debugger
+1. launch react native debugger
+2. cmd+T ... then set port (19000 default)
+3. open emulator, bring up options: cmd+ctrl+z, then Debug Remote JS
