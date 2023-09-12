@@ -7,7 +7,10 @@
   },
   "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:react/jsx-runtime"],
   "parserOptions": {
-    "ecmaVersion": 2015 ,
+    "ecmaVersion": 2023 ,
+    "ecmaFeatures": {
+      "jsx": true
+    },
     "parser": "@babel/eslint-parser",
     "sourceType": "module",
     "requireConfigFile": false
