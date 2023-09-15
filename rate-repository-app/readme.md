@@ -1,4 +1,5 @@
-hours: 1+1+2 + 2 +1 = 7
+hoursB: 1+1+2 + 2 + 1 = 7
+hoursC: 3
 # Steps
 1. initialize w create-expo-app:
 `npx create-expo-app rate-repository-app --template expo-template-blank@sdk-46`
