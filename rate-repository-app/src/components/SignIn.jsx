@@ -1,5 +1,6 @@
 import { Pressable, StyleSheet, View } from 'react-native';
 import { useNavigate } from 'react-router-native'
+import { useState } from 'react';
 import { Formik } from 'formik';
 import * as yup from 'yup';
 
@@ -41,19 +42,25 @@ const validationSchema = yup.object().shape({
 
 const SignIn = () => {
   const [signIn] = useSignIn();
-  // const [signInError, setSignInError] = useState(null);
+  const [signInError, setSignInError] = useState(null);
   const navigate = useNavigate();
 
   const onSubmit = async (values) => {
     const { username, password } = values;
     console.log(`Signing In w/ username: ${username} and password: ${password}`);
     try {
-      await signIn({ username, password});
+      await signIn({ username, password });
       navigate('/');
-    } catch(e) {
-      console.log('error signing in', e);
+    } catch (e) {
+      console.log(e);
+      setSignInError('Invalid username or password')
     }
   };
+
+  const resetError = () => {
+    setSignInError('')
+  }
+
 
   return (
     <View style={styles.container}>
@@ -65,18 +72,18 @@ const SignIn = () => {
       >
         {({ handleSubmit, isValid }) => ( //these are both Formik props
           <>
-            <FormikTextInput name="username" placeholder="Username" />
-            <FormikTextInput name="password" placeholder="Password" secureTextEntry />
+            <FormikTextInput name="username" placeholder="Username" onChange={()=> resetError()}/>
+            <FormikTextInput name="password" placeholder="Password" onChange={()=> resetError()} secureTextEntry />
             <Pressable
-              onPress={() => handleSubmit()} 
+              onPress={() => handleSubmit()}
               style={isValid ? styles.button : [styles.button, styles.buttonDisabled]}
               disabled={!isValid}
             >
               <Text color='textLight' fontWeight='bold' fontSize={'subheading'}>Sign In</Text>
             </Pressable>
-            {/* {signInError && (
+            {signInError && (
               <Text style={styles.errorText}>{signInError}</Text>
-            )} */}
+            )}
           </>
         )}
       </Formik>
